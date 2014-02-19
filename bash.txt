@@ -1,0 +1,21 @@
+#Git
+alias g='git status'
+alias gco='git checkout'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gb="git branch"
+alias gc="git commit"
+alias ga="git add"
+alias gld="git log --oneline --decorate --graph"
+
+#Rails Projects
+alias zip="cd ~/projects/zipmark-service"
+
+#Tailing Rails
+alias tld='tail -f log/development.log | grep here'
+alias tlt='tail -f log/test.log | grep here'
+
+export PS1="\[\033[1;34m\]\[\033[1;32m\]\u\[\033[0m\]:\[\033[1;34m\]\w\[\033[0m\]$"
+export PATH=$PATH:~/bin
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+source ~/.git-completion.sh
