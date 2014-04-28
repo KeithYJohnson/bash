@@ -1,19 +1,50 @@
 #Git
 alias g='git status'
+alias gcom='git checkout master'
 alias gco='git checkout'
 alias gd='git diff'
+alias gdom='git diff origin/master'
 alias gdc='git diff --cached'
 alias gb="git branch"
 alias gc="git commit"
+alias gcob='git checkout -b'
+alias gsh='git stash'
+alias gsa='git stash apply'
 alias ga="git add"
 alias gld="git log --oneline --decorate --graph"
+alias gl="git log"
+alias grm="git rebase -i master"
+alias gpo="git push origin"
+alias gp="git push"
+alias gpl="git pull"
+alias gs='git status'
+alias gr='git rebase'
+alias gm='git merge'
+alias gcm='git commit -m'
+alias gmm='git merge master'
 
 #Rails Projects
 alias zip="cd ~/projects/zipmark-service"
+alias ozip="zip; subl ."
+alias zipw="cd ~/projects/zipmark-web"
+alias ozipw="zipw; subl ."
+alias ach="cd ~/projects/ach"
 
-#Tailing Rails
-alias tld='tail -f log/development.log | grep here'
+#Rails
+alias rc='rails console'
+alias rs='rails server'
+alias rg='rails generate'
+alias rr='rails runner'
+alias rdbc='rails dbconsole'
+alias tld='tail -f log/development.log'
 alias tlt='tail -f log/test.log | grep here'
+## RAKE
+alias rks='rake spec'
+alias rkr='rake routes'
+alias rkrg='rake routes | grep'
+
+#Edit this
+alias dott='vi ~/.bash_profile'
 
 export PS1="\[\033[1;34m\]\[\033[1;32m\]\u\[\033[0m\]:\[\033[1;34m\]\w\[\033[0m\]$"
 export PATH=$PATH:~/bin
