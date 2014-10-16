@@ -19,16 +19,28 @@ alias gp="git push"
 alias gpl="git pull"
 alias gs='git status'
 alias gr='git rebase'
+alias grm='git rm'
 alias gm='git merge'
 alias gcm='git commit -m'
 alias gmm='git merge master'
+alias gplr='git checkout --track origin/'
+alias gpl='git pull'
+alias gds='git diff --staged'
+alias gsl='git stash list --date=local'
 
 #Rails Projects
 alias zip="cd ~/projects/zipmark-service"
 alias ozip="zip; subl ."
+alias zipe="cd ~/projects/zipmark-embed"
 alias zipw="cd ~/projects/zipmark-web"
+alias zipp="cd ~/projects/zipmark-presentment"
 alias ozipw="zipw; subl ."
 alias ach="cd ~/projects/ach"
+alias restart="touch tmp/restart.txt"
+alias restartpow="touch ~/.pow/restart.txt"
+alias play='cd ~/play'
+alias reset_dev='ruby ./util/zipmark_dev_setup.rb'
+alias be='bundle exec'
 
 #Rails
 alias rc='rails console'
@@ -37,11 +49,14 @@ alias rg='rails generate'
 alias rr='rails runner'
 alias rdbc='rails dbconsole'
 alias tld='tail -f log/development.log'
-alias tlt='tail -f log/test.log | grep here'
+alias tlt='tail -f log/test.log'
 ## RAKE
-alias rks='rake spec'
-alias rkr='rake routes'
-alias rkrg='rake routes | grep'
+alias rks='bundle exec rake spec'
+alias rkr='bundle exec rake routes'
+alias rkrg='bundle exec rake routes | grep'
+
+alias work='ssh worker'
+alias sand='ssh sandbox'
 
 #Edit this
 alias dott='vi ~/.bash_profile'
@@ -49,4 +64,8 @@ alias dott='vi ~/.bash_profile'
 export PS1="\[\033[1;34m\]\[\033[1;32m\]\u\[\033[0m\]:\[\033[1;34m\]\w\[\033[0m\]$"
 export PATH=$PATH:~/bin
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-source ~/.git-completion.sh
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+  __git_complete gco _git_checkout
+  __git_complete gpo _git_push_origin
+fi
