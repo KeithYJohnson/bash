@@ -50,6 +50,7 @@ alias rr='rails runner'
 alias rdbc='rails dbconsole'
 alias tld='tail -f log/development.log'
 alias tlt='tail -f log/test.log'
+alias b='bundle'
 ## RAKE
 alias rks='bundle exec rake spec'
 alias rkr='bundle exec rake routes'
@@ -57,6 +58,15 @@ alias rkrg='bundle exec rake routes | grep'
 
 alias work='ssh worker'
 alias sand='ssh sandbox'
+
+## Ember
+alias es='ember serve'
+alias es3='ember server --proxy http://localhost:3000'
+
+##unix
+alias ll='ls -al'
+alias mkdir='mkdir -p'
+alias ...='../..'
 
 #Edit this
 alias dott='vi ~/.bash_profile'
